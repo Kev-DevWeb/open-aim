@@ -2,6 +2,20 @@
 
 All notable changes to open-aim. Newest first.
 
+## [1.3.1] - 2026-11-08
+
+**Play any drill with any gun, and four new drills built around one weapon.**
+
+### Weapons
+- **Your weapon** in Settings → Visuals: pick any of the 18 guns (Phantom, Operator, Sheriff, Spectre…) and every drill starts with it. **Drill default** keeps each drill's own gun.
+- The **buy menu (B)** now works in every drill, including the fundamentals and Ascent B main.
+
+### New drills
+- **Operator wide flicks**, **Sheriff one-taps**, **Phantom spray transfer** and **Spectre close strafer**. They always use their own gun, whatever you pick under Your weapon.
+
+### App
+- Updates now come from this fork's releases (Kev-DevWeb/open-aim).
+
 ## [1.3.0] - 2026-10-29
 
 **The biggest update yet: a new map, 15 skins, new aiming and effects, a much bigger Studio and smoother performance.**

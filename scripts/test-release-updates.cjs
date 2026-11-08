@@ -9,7 +9,7 @@ const payload = Buffer.from('a test installer, never executed');
 function release(tag = 'v1.2.0') {
   return { tag_name: tag, draft: false, prerelease: false, assets: [{ name: 'AimTrainer-Setup.exe', state: 'uploaded', size: payload.length,
     digest: 'sha256:' + crypto.createHash('sha256').update(payload).digest('hex'),
-    browser_download_url: 'https://github.com/unkwsr/open-aim/releases/download/' + tag + '/AimTrainer-Setup.exe' }] };
+    browser_download_url: 'https://github.com/Kev-DevWeb/open-aim/releases/download/' + tag + '/AimTrainer-Setup.exe' }] };
 }
 function fixture(t, overrides = {}) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aim-update-test-'));
