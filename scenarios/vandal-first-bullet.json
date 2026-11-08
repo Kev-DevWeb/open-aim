@@ -1,0 +1,35 @@
+{
+  "item": {
+    "createTime": "2026-11-08 12:00:00",
+    "description": "A bot shows up at mid range and is gone after 1.6 seconds. Real Vandal accuracy: stop, place the first bullet on the head, no spray.",
+    "docBytes": 1039,
+    "featured": false,
+    "mapId": null,
+    "name": "Vandal first bullet",
+    "parSeconds": null,
+    "playCount": 0,
+    "sceneKey": "set-443404091673387c",
+    "shareCode": "443404091673387c",
+    "sort": 130,
+    "status": 1,
+    "type": "basic",
+    "updateTime": "2026-11-08 12:00:00"
+  },
+  "scene": {
+    "authorNickname": "open-aim",
+    "authorUid": "local",
+    "blockCount": 1,
+    "createTime": "2026-11-08 12:00:00",
+    "description": "A bot shows up at mid range and is gone after 1.6 seconds. Real Vandal accuracy: stop, place the first bullet on the head, no spray.",
+    "docBytes": 1039,
+    "name": "Vandal first bullet",
+    "playCount": 0,
+    "sceneHash": "443404091673387c",
+    "sceneKey": "set-443404091673387c",
+    "schemaVersion": 2,
+    "shareCode": "443404091673387c",
+    "updateTime": "2026-11-08 12:00:00",
+    "weaponLocked": true,
+    "doc": "{\"schemaVersion\":2,\"meta\":{\"id\":\"set-443404091673387c\",\"name\":\"Vandal first bullet\",\"seed\":71516224,\"createdAt\":0},\"environment\":{\"skyColor\":\"#111820\",\"fogNear\":14,\"fogFar\":33,\"ambientIntensity\":1.55,\"keyLightIntensity\":2.2,\"lightingVersion\":2,\"fogEnabled\":false},\"blocks\":[{\"id\":\"ground\",\"shape\":\"plane\",\"position\":{\"x\":0,\"y\":0,\"z\":0},\"rotationY\":0,\"size\":{\"x\":100,\"y\":0.4,\"z\":100},\"color\":\"#cfd2d4\",\"collidable\":true}],\"playerSpawn\":{\"position\":{\"x\":0,\"y\":0,\"z\":10},\"yaw\":0},\"spawners\":[{\"id\":\"spawner-1\",\"name\":\"Area\",\"kind\":\"area\",\"actorTemplateId\":\"actor-1\",\"position\":{\"x\":0,\"y\":0,\"z\":-10},\"size\":{\"x\":10,\"y\":0,\"z\":0.5},\"maxAlive\":1,\"spawnDelay\":[0.4,1.0],\"faceTarget\":true,\"groundSnap\":true}],\"actors\":[{\"id\":\"actor-1\",\"name\":\"Bot\",\"body\":{\"shape\":\"humanoid\",\"headSize\":1.0,\"bodyWidth\":0.44,\"bodyHeight\":0,\"look\":\"bot\"},\"color\":\"#ff4655\",\"behaviors\":[{\"kind\":\"decay\",\"lifetime\":1.6,\"growTime\":0,\"minScale\":1}],\"hitSlow\":true}],\"rules\":{\"duration\":60,\"playerMovable\":false,\"weapon\":\"vandal\",\"fireMode\":\"single\",\"scoring\":\"clicking\"}}"
+  }
+}

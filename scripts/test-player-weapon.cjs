@@ -63,5 +63,5 @@ test("works on every drill shipped in scenarios/", () => {
     assert.equal(JSON.parse(applyWeapon(s, pick).doc).rules.weapon, s.weaponLocked ? own : pick, name);
     if (s.weaponLocked) locked++;
   }
-  assert.equal(locked, 4, "the four weapon drills are locked");
+  assert.equal(locked, 6, "the six weapon drills are locked");
 });

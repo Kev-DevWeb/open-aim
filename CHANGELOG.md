@@ -11,7 +11,8 @@ All notable changes to open-aim. Newest first.
 - The **buy menu (B)** now works in every drill, including the fundamentals and Ascent B main.
 
 ### New drills
-- **Operator wide flicks**, **Sheriff one-taps**, **Phantom spray transfer** and **Spectre close strafer**. They always use their own gun, whatever you pick under Your weapon.
+- **Operator wide flicks**, **Sheriff one-taps**, **Phantom spray transfer**, **Spectre close strafer**, **Guardian long taps** and **Vandal first bullet**. They always use their own gun, whatever you pick under Your weapon.
+- **Reaction flicks**: after a random pause a bot appears and vanishes in 0.9 seconds. Plays with whatever gun you pick.
 
 ### App
 - Updates now come from this fork's releases (Kev-DevWeb/open-aim).
