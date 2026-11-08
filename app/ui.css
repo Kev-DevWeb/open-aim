@@ -225,3 +225,9 @@
 .al-pause-dirty {
   bottom: 24px !important;
 }
+
+/* "Your weapon" row (player-weapon-ui.js): 19 choices wrap instead of overflowing. */
+.es-weapon-row.hall-field { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+.es-weapon-select { display: flex; flex-wrap: wrap; gap: 4px; }
+.es-weapon-select button { display: inline-flex; align-items: center; gap: 6px; }
+.es-weapon-icon { height: 14px; width: auto; opacity: .85; }

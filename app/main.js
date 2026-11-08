@@ -7,6 +7,7 @@ const http = require("http");
 const path = require("path");
 const backups = require("./backups");
 const studio = require("./studio-store");
+const playerWeapon = require("./player-weapon");
 
 // Testing only: AIM_PROFILE=<folder> keeps all player data and backups in that folder,
 // so test runs never touch the real save.
@@ -76,6 +77,7 @@ const SNIPER_SCOPES_JS = fs.readFileSync(path.join(__dirname,"sniper-scopes.js")
 const FAN_AUDIO_JS = fs.readFileSync(path.join(__dirname,"fan-audio.js"),"utf-8");
 const ADVANCED_TRACERS_JS = fs.readFileSync(path.join(__dirname, "advanced-tracers.js"), "utf-8");
 const LOCAL_CUSTOMIZATION_JS = fs.readFileSync(path.join(__dirname, "local-customization.js"), "utf-8");
+const PLAYER_WEAPON_UI_JS = fs.readFileSync(path.join(__dirname, "player-weapon-ui.js"), "utf-8");
 const PLAYER_TOOLS_JS = fs.readFileSync(path.join(__dirname, "player-tools.js"), "utf-8");
 const VALORANT_IMPORT_JS = ["valorant-import.js", "valorant-import-ui.js"]
   .map(name => fs.readFileSync(path.join(__dirname, name), "utf-8")).join("\n");
@@ -101,6 +103,7 @@ const UI_SCRIPTS = [
   ["FAN AUDIO", FAN_AUDIO_JS],
   ["ADVANCED TRACERS", ADVANCED_TRACERS_JS],
   ["LOCAL CUSTOMIZATION", LOCAL_CUSTOMIZATION_JS],
+  ["PLAYER WEAPON", PLAYER_WEAPON_UI_JS],
   ["PLAYER TOOLS", PLAYER_TOOLS_JS],
   ["INTERFACE MODE", INTERFACE_MODE_JS],
   ["FRAME METER", FRAME_METER_JS],
@@ -316,13 +319,26 @@ function handle(req, res) {
       return;
     } catch {}
   }
+  // Every drill's scene passes through here, so the lobby's weapon choice
+  // (player-weapon.js) reaches Studio drills, training-set drills and the site's own.
   if (requested.startsWith(SCENE_PREFIX)) {
     const code = requested.slice(SCENE_PREFIX.length);
     const own = mine.find((e) => e.item.shareCode === code);
     const scene = own ? own.scene : trainingSet.scenes[code];
     if (scene) {
-      sendJson(req, res, { code: "00000", data: scene, msg: "", local: true });
+      sendJson(req, res, { code: "00000", data: playerWeapon.applyWeapon(scene, shellSettings.playerWeapon), msg: "", local: true });
       return;
+    }
+    const [, sceneFile] = resolve(requested);
+    if (sceneFile && playerWeapon.isWeapon(shellSettings.playerWeapon)) {
+      try {
+        const reply = JSON.parse(fs.readFileSync(sceneFile, "utf-8"));
+        if (reply && reply.data) {
+          reply.data = playerWeapon.applyWeapon(reply.data, shellSettings.playerWeapon);
+          sendJson(req, res, reply);
+          return;
+        }
+      } catch {}
     }
   }
   if (requested.endsWith(SHOT_LOOP_FILE)) {
@@ -499,6 +515,20 @@ ipcMain.on("aim:shell:vsync", (_event, on) => {
   } catch (err) {
     console.log(`SHELL SETTINGS: ${err}`);
   }
+});
+// The player's weapon for every drill (player-weapon.js); "" keeps each drill's own.
+ipcMain.handle("aim:weapon:get", () => ({
+  weapon: playerWeapon.isWeapon(shellSettings.playerWeapon) ? shellSettings.playerWeapon : "",
+  weapons: playerWeapon.WEAPONS,
+}));
+ipcMain.handle("aim:weapon:set", (_event, id) => {
+  shellSettings.playerWeapon = playerWeapon.isWeapon(id) ? id : "";
+  try {
+    fs.writeFileSync(SHELL_FILE, JSON.stringify(shellSettings, null, 2));
+  } catch (err) {
+    console.log(`SHELL SETTINGS: ${err}`);
+  }
+  return shellSettings.playerWeapon;
 });
 // The portable build runs from a temporary copy, so relaunch the .exe itself. Settings
 // saved in the page's localStorage just before (map culling) are flushed first, since

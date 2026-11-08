@@ -48,6 +48,11 @@ contextBridge.exposeInMainWorld("__aimDesktop", {
     renameRun: (payload) => ipcRenderer.invoke("aim:studio:renameRun", payload),
     removeRun: (id) => ipcRenderer.invoke("aim:studio:removeRun", id),
   },
+  // The player's weapon for every drill (player-weapon-ui.js); see player-weapon.js.
+  weapon: {
+    get: () => ipcRenderer.invoke("aim:weapon:get"),
+    set: (id) => ipcRenderer.invoke("aim:weapon:set", typeof id === "string" ? id : ""),
+  },
   // Desktop frame settings (window.aimDesktop below); see main.js.
   setVsync: (on) => ipcRenderer.send("aim:shell:vsync", on === true),
   restart: () => ipcRenderer.send("aim:shell:restart"),
