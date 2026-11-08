@@ -32,6 +32,7 @@ The same fields as `item` (name, description, shareCode, sceneKey…), plus:
 | `schemaVersion` | Version of the `doc` format. Currently `2`. |
 | `blockCount` | Number of blocks in `doc` |
 | `authorNickname`, `authorUid` | Who made it. Use your GitHub name. |
+| `weaponLocked` | Optional. `true` for a drill built around one gun: it always uses `doc.rules.weapon`, even when the player picked another weapon under Settings → Visuals → Your weapon. |
 
 The easiest way to get a valid `doc` is to copy a similar scenario and change it.
 

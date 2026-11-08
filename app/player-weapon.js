@@ -18,8 +18,9 @@ function isWeapon(id) {
 
 // Returns a copy of the scene with the player's weapon set, or the scene itself when there
 // is nothing to change. scene.doc is the drill as a JSON string; docBytes follows its length.
+// Drills built around one gun set scene.weaponLocked and always keep their own weapon.
 function applyWeapon(scene, weapon) {
-  if (!isWeapon(weapon) || !scene || typeof scene.doc !== "string") return scene;
+  if (!isWeapon(weapon) || !scene || scene.weaponLocked === true || typeof scene.doc !== "string") return scene;
   let doc;
   try {
     doc = JSON.parse(scene.doc);

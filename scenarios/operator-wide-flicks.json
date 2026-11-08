@@ -1,0 +1,35 @@
+{
+  "item": {
+    "createTime": "2026-11-08 12:00:00",
+    "description": "One bot at a time, far away and anywhere across a wide line. Scope, flick and land the first shot: every miss costs a bolt cycle and ammo.",
+    "docBytes": 1005,
+    "featured": false,
+    "mapId": null,
+    "name": "Operator wide flicks",
+    "parSeconds": null,
+    "playCount": 0,
+    "sceneKey": "set-e6d85702ce506126",
+    "shareCode": "e6d85702ce506126",
+    "sort": 125,
+    "status": 1,
+    "type": "basic",
+    "updateTime": "2026-11-08 12:00:00"
+  },
+  "scene": {
+    "authorNickname": "open-aim",
+    "authorUid": "local",
+    "blockCount": 1,
+    "createTime": "2026-11-08 12:00:00",
+    "description": "One bot at a time, far away and anywhere across a wide line. Scope, flick and land the first shot: every miss costs a bolt cycle and ammo.",
+    "docBytes": 1005,
+    "name": "Operator wide flicks",
+    "playCount": 0,
+    "sceneHash": "e6d85702ce506126",
+    "sceneKey": "set-e6d85702ce506126",
+    "schemaVersion": 2,
+    "shareCode": "e6d85702ce506126",
+    "updateTime": "2026-11-08 12:00:00",
+    "weaponLocked": true,
+    "doc": "{\"schemaVersion\":2,\"meta\":{\"id\":\"set-e6d85702ce506126\",\"name\":\"Operator wide flicks\",\"seed\":242058608,\"createdAt\":0},\"environment\":{\"skyColor\":\"#111820\",\"fogNear\":14,\"fogFar\":33,\"ambientIntensity\":1.55,\"keyLightIntensity\":2.2,\"lightingVersion\":2,\"fogEnabled\":false},\"blocks\":[{\"id\":\"ground\",\"shape\":\"plane\",\"position\":{\"x\":0,\"y\":0,\"z\":0},\"rotationY\":0,\"size\":{\"x\":100,\"y\":0.4,\"z\":100},\"color\":\"#cfd2d4\",\"collidable\":true}],\"playerSpawn\":{\"position\":{\"x\":0,\"y\":0,\"z\":10},\"yaw\":0},\"spawners\":[{\"id\":\"spawner-1\",\"name\":\"Area\",\"kind\":\"area\",\"actorTemplateId\":\"actor-1\",\"position\":{\"x\":0,\"y\":0,\"z\":-15},\"size\":{\"x\":22,\"y\":0,\"z\":0.5},\"maxAlive\":1,\"spawnDelay\":[0.4,1.0],\"faceTarget\":true,\"groundSnap\":true}],\"actors\":[{\"id\":\"actor-1\",\"name\":\"Bot\",\"body\":{\"shape\":\"humanoid\",\"headSize\":1.0,\"bodyWidth\":0.44,\"bodyHeight\":0,\"look\":\"bot\"},\"color\":\"#ff4655\",\"behaviors\":[],\"hitSlow\":true}],\"rules\":{\"duration\":60,\"playerMovable\":false,\"weapon\":\"operator\",\"fireMode\":\"single\",\"scoring\":\"clicking\",\"limitedAmmo\":true}}"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "item": {
+    "createTime": "2026-11-08 12:00:00",
+    "description": "Three bots side by side. Hold fire and drag the spray from head to head while pulling down against the recoil.",
+    "docBytes": 983,
+    "featured": false,
+    "mapId": null,
+    "name": "Phantom spray transfer",
+    "parSeconds": null,
+    "playCount": 0,
+    "sceneKey": "set-51109e49c42d0825",
+    "shareCode": "51109e49c42d0825",
+    "sort": 127,
+    "status": 1,
+    "type": "basic",
+    "updateTime": "2026-11-08 12:00:00"
+  },
+  "scene": {
+    "authorNickname": "open-aim",
+    "authorUid": "local",
+    "blockCount": 1,
+    "createTime": "2026-11-08 12:00:00",
+    "description": "Three bots side by side. Hold fire and drag the spray from head to head while pulling down against the recoil.",
+    "docBytes": 983,
+    "name": "Phantom spray transfer",
+    "playCount": 0,
+    "sceneHash": "51109e49c42d0825",
+    "sceneKey": "set-51109e49c42d0825",
+    "schemaVersion": 2,
+    "shareCode": "51109e49c42d0825",
+    "updateTime": "2026-11-08 12:00:00",
+    "weaponLocked": true,
+    "doc": "{\"schemaVersion\":2,\"meta\":{\"id\":\"set-51109e49c42d0825\",\"name\":\"Phantom spray transfer\",\"seed\":85002724,\"createdAt\":0},\"environment\":{\"skyColor\":\"#111820\",\"fogNear\":14,\"fogFar\":33,\"ambientIntensity\":1.55,\"keyLightIntensity\":2.2,\"lightingVersion\":2,\"fogEnabled\":false},\"blocks\":[{\"id\":\"ground\",\"shape\":\"plane\",\"position\":{\"x\":0,\"y\":0,\"z\":0},\"rotationY\":0,\"size\":{\"x\":100,\"y\":0.4,\"z\":100},\"color\":\"#cfd2d4\",\"collidable\":true}],\"playerSpawn\":{\"position\":{\"x\":0,\"y\":0,\"z\":10},\"yaw\":0},\"spawners\":[{\"id\":\"spawner-1\",\"name\":\"Area\",\"kind\":\"area\",\"actorTemplateId\":\"actor-1\",\"position\":{\"x\":0,\"y\":0,\"z\":-2},\"size\":{\"x\":6,\"y\":0,\"z\":0.5},\"maxAlive\":3,\"spawnDelay\":[0.0,0.15],\"faceTarget\":true,\"groundSnap\":true}],\"actors\":[{\"id\":\"actor-1\",\"name\":\"Bot\",\"body\":{\"shape\":\"humanoid\",\"headSize\":1.0,\"bodyWidth\":0.44,\"bodyHeight\":0,\"look\":\"bot\"},\"color\":\"#ff4655\",\"behaviors\":[],\"hitSlow\":true}],\"rules\":{\"duration\":60,\"playerMovable\":false,\"weapon\":\"phantom\",\"fireMode\":\"hold\",\"scoring\":\"clicking\"}}"
+  }
+}

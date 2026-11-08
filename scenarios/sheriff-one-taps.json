@@ -1,0 +1,35 @@
+{
+  "item": {
+    "createTime": "2026-11-08 12:00:00",
+    "description": "Two small-headed bots at a time in a row at mid range. Stand still and one-tap the head: body shots and misses waste the cylinder.",
+    "docBytes": 997,
+    "featured": false,
+    "mapId": null,
+    "name": "Sheriff one-taps",
+    "parSeconds": null,
+    "playCount": 0,
+    "sceneKey": "set-44e40db6736c1916",
+    "shareCode": "44e40db6736c1916",
+    "sort": 126,
+    "status": 1,
+    "type": "basic",
+    "updateTime": "2026-11-08 12:00:00"
+  },
+  "scene": {
+    "authorNickname": "open-aim",
+    "authorUid": "local",
+    "blockCount": 1,
+    "createTime": "2026-11-08 12:00:00",
+    "description": "Two small-headed bots at a time in a row at mid range. Stand still and one-tap the head: body shots and misses waste the cylinder.",
+    "docBytes": 997,
+    "name": "Sheriff one-taps",
+    "playCount": 0,
+    "sceneHash": "44e40db6736c1916",
+    "sceneKey": "set-44e40db6736c1916",
+    "schemaVersion": 2,
+    "shareCode": "44e40db6736c1916",
+    "updateTime": "2026-11-08 12:00:00",
+    "weaponLocked": true,
+    "doc": "{\"schemaVersion\":2,\"meta\":{\"id\":\"set-44e40db6736c1916\",\"name\":\"Sheriff one-taps\",\"seed\":72237275,\"createdAt\":0},\"environment\":{\"skyColor\":\"#111820\",\"fogNear\":14,\"fogFar\":33,\"ambientIntensity\":1.55,\"keyLightIntensity\":2.2,\"lightingVersion\":2,\"fogEnabled\":false},\"blocks\":[{\"id\":\"ground\",\"shape\":\"plane\",\"position\":{\"x\":0,\"y\":0,\"z\":0},\"rotationY\":0,\"size\":{\"x\":100,\"y\":0.4,\"z\":100},\"color\":\"#cfd2d4\",\"collidable\":true}],\"playerSpawn\":{\"position\":{\"x\":0,\"y\":0,\"z\":10},\"yaw\":0},\"spawners\":[{\"id\":\"spawner-1\",\"name\":\"Area\",\"kind\":\"area\",\"actorTemplateId\":\"actor-1\",\"position\":{\"x\":0,\"y\":0,\"z\":-5},\"size\":{\"x\":7,\"y\":0,\"z\":0.5},\"maxAlive\":2,\"spawnDelay\":[0.3,0.8],\"faceTarget\":true,\"groundSnap\":true}],\"actors\":[{\"id\":\"actor-1\",\"name\":\"Bot\",\"body\":{\"shape\":\"humanoid\",\"headSize\":0.8,\"bodyWidth\":0.44,\"bodyHeight\":0,\"look\":\"bot\"},\"color\":\"#ff4655\",\"behaviors\":[],\"hitSlow\":true}],\"rules\":{\"duration\":60,\"playerMovable\":false,\"weapon\":\"sheriff\",\"fireMode\":\"single\",\"scoring\":\"clicking\",\"limitedAmmo\":true}}"
+  }
+}

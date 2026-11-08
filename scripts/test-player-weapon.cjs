@@ -47,10 +47,21 @@ test("leaves the scene alone when there is nothing to do", () => {
   assert.equal(applyWeapon(null, "phantom"), null);
 });
 
+test("keeps the weapon of a drill built around one gun", () => {
+  const locked = { ...scene({ weapon: "operator" }), weaponLocked: true };
+  assert.equal(applyWeapon(locked, "vandal"), locked);
+});
+
 test("works on every drill shipped in scenarios/", () => {
   const dir = path.join(__dirname, "../scenarios");
+  let locked = 0;
   for (const name of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     const { scene: s } = JSON.parse(fs.readFileSync(path.join(dir, name), "utf8"));
-    assert.equal(JSON.parse(applyWeapon(s, "phantom").doc).rules.weapon, "phantom", name);
+    const own = JSON.parse(s.doc).rules.weapon;
+    const pick = own === "judge" ? "bucky" : "judge";
+    assert.ok(isWeapon(own), `${name}: rules.weapon "${own}" is not one of the engine's guns`);
+    assert.equal(JSON.parse(applyWeapon(s, pick).doc).rules.weapon, s.weaponLocked ? own : pick, name);
+    if (s.weaponLocked) locked++;
   }
+  assert.equal(locked, 4, "the four weapon drills are locked");
 });
