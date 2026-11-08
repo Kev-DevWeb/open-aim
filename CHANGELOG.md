@@ -4,7 +4,7 @@ All notable changes to open-aim. Newest first.
 
 ## [1.3.1] - 2026-11-08
 
-**Play any drill with any gun, and four new drills built around one weapon.**
+**Play any drill with any gun, and seven new drills: six built around one weapon and a reaction drill.**
 
 ### Weapons
 - **Your weapon** in Settings → Visuals: pick any of the 18 guns (Phantom, Operator, Sheriff, Spectre…) and every drill starts with it. **Drill default** keeps each drill's own gun.
