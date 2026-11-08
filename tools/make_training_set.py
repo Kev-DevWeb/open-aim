@@ -82,9 +82,9 @@ def arena(name, actors, spawners, rules, blocks=()):
             "spawners": spawners, "actors": actors, "rules": rules}
 
 
-CLICK = {"duration": 60, "scoring": "clicking", "weapon": "vandal", "playerMovable": False, "fireMode": "single", "perfectAccuracy": True, "buyMenu": False}
+CLICK = {"duration": 60, "scoring": "clicking", "weapon": "vandal", "playerMovable": False, "fireMode": "single", "perfectAccuracy": True}
 TRACK = {"duration": 60, "scoring": "tracking", "weapon": "vandal", "playerMovable": False, "fireMode": "hold", "perfectAccuracy": True,
-         "targetsInvincible": True, "buyMenu": False}
+         "targetsInvincible": True}
 
 entries = []  # (listing item fields, doc)
 
