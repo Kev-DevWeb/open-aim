@@ -723,7 +723,7 @@ import{a_ as ve,aa as ln,b3 as Is,eq as Zu,dc,bm as ls,dl as br,aZ as oa,er as j
       const clip=await equip;check();if(clip)Ue.setEquip?.(clip);
       report("Warming weapon shaders and textures",2);
       await __aimWarmMeleeModel(r.renderer,Ue,{valid,aspect:t.aspectRatio.current,hand:t.viewModelHand.current,fov:t.viewModelFov.current});check();
-      const imported=['viewmodel','phantom','odin','ares','spectre','stinger','bulldog','judge','outlaw','bucky','shorty','guardian','classic','ghost','sheriff','operator'];
+      const imported=(()=>{try{return localStorage.getItem('aim-warm-all-weapons')==='1'}catch{return false}})()?['viewmodel','phantom','odin','ares','spectre','stinger','bulldog','judge','outlaw','bucky','shorty','guardian','classic','ghost','sheriff','operator']:[];
       __aimWarmKeys=new Set([En]);
       for(let index=0;index<imported.length;index++){
         const weapon=imported[index],key=Xs(weapon);

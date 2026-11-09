@@ -2,6 +2,14 @@
 
 All notable changes to open-aim. Newest first.
 
+## [1.3.2] - 2026-11-09
+
+**Uses much less memory in drills.**
+
+### Performance
+- Drills no longer load all 16 guns and their skins before the round. Only your weapon and the knife are prepared; any other gun loads the first time you buy it with B (a short pause that one time). In an arena drill this cuts the files loaded from 93 MB to 29 MB and the app's memory from about 2.1 GB to 1.5 GB.
+- To get the old behavior back, run `localStorage.setItem('aim-warm-all-weapons', '1')` in the F12 console.
+
 ## [1.3.1] - 2026-11-08
 
 **Play any drill with any gun, and seven new drills: six built around one weapon and a reaction drill.**
