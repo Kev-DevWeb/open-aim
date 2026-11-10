@@ -2,6 +2,14 @@
 
 All notable changes to open-aim. Newest first.
 
+## [1.3.3] - 2026-11-10
+
+**Diagnostics for frame rate reports.**
+
+### Diagnostics
+- **F9** records 5 seconds of performance data while you play and saves it, gzipped, to `Documents/AimTrainer-diagnostico`. The file opens in DevTools > Performance.
+- **Ctrl+Shift+L** turns light mode on or off: the page reloads without the esports theme, the restyled menus and the extra interface scripts (weapon and skin choices, frame meter, Studio launch…), to check how much they cost. Turn it off again for the full app.
+
 ## [1.3.2] - 2026-11-09
 
 **Uses much less memory in drills.**

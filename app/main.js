@@ -8,6 +8,7 @@ const path = require("path");
 const backups = require("./backups");
 const studio = require("./studio-store");
 const playerWeapon = require("./player-weapon");
+const perfTools = require("./perf-tools");
 
 // Testing only: AIM_PROFILE=<folder> keeps all player data and backups in that folder,
 // so test runs never touch the real save.
@@ -434,16 +435,18 @@ function createWindow(url) {
     // webContents.executeJavaScript waits until the whole page has stopped loading (every
     // image and late module), seconds after this. The startup screen is run on the main
     // frame instead, which runs now, so the window opens on it rather than a blank page.
+    // Light mode (Ctrl+Shift+L, perf-tools.js) leaves out the theme and the UI scripts.
+    const light = perfTools.isLight(shellSettings);
     Promise.all([
       win.webContents.insertCSS(HIDE_CSS),
-      win.webContents.insertCSS(UI_CSS),
-      win.webContents.insertCSS(THEME_CSS),
+      light ? null : win.webContents.insertCSS(UI_CSS),
+      light ? null : win.webContents.insertCSS(THEME_CSS),
       win.webContents.insertCSS(OFFLINE_CSS),
       win.webContents.insertCSS(VALORANT_IMPORT_CSS),
       win.webContents.insertCSS(RELEASE_UPDATES_CSS),
       win.webContents.mainFrame.executeJavaScript(STARTUP_SCREEN_RUN).catch((err) => console.log(`STARTUP SCREEN: ${err}`)),
     ]).catch(() => {}).finally(show);
-    win.webContents.executeJavaScript(UI_SCRIPT_BATCH).catch((err) => console.log(`UI SCRIPTS: ${err}`));
+    if (!light) win.webContents.executeJavaScript(UI_SCRIPT_BATCH).catch((err) => console.log(`UI SCRIPTS: ${err}`));
   });
 
   win.webContents.on("before-input-event", (event, input) => {
@@ -460,6 +463,14 @@ function createWindow(url) {
       event.preventDefault();
     } else if (input.key === "F12") {
       win.webContents.toggleDevTools();
+      event.preventDefault();
+    } else if (perfTools.handleKey(win, input, shellSettings, () => {
+      try {
+        fs.writeFileSync(SHELL_FILE, JSON.stringify(shellSettings, null, 2));
+      } catch (err) {
+        console.log(`SHELL SETTINGS: ${err}`);
+      }
+    })) {
       event.preventDefault();
     }
   });
